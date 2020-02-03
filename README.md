@@ -1,4 +1,4 @@
-# GBIF BOM
+# GBIF BOM for Spring projects
 
 List of dependencies and versions.
 
@@ -13,7 +13,7 @@ There are two ways how to use the GBIF BOM in a project:
     <name>Some project</name>
     <parent>
         <groupId>org.gbif</groupId>
-        <artifactId>gbif-bom</artifactId>
+        <artifactId>gbif-spring-bom</artifactId>
         <version>...</version>
     </parent>
 </project>
@@ -31,7 +31,7 @@ There are two ways how to use the GBIF BOM in a project:
         <dependencies>
             <dependency>
                 <groupId>org.gbif</groupId>
-                <artifactId>gbif-bom</artifactId>
+                <artifactId>gbif-spring-bom</artifactId>
                 <version>...</version>
                 <type>pom</type>
                 <scope>import</scope>

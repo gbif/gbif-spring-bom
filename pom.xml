@@ -5,24 +5,24 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.gbif</groupId>
-  <artifactId>gbif-bom</artifactId>
+  <artifactId>gbif-spring-bom</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>GBIF Bill of materials (BOM)</name>
-  <description>The project to provide dependency management</description>
-  <url>https://github.org/gbif/gbif-bom</url>
+  <name>GBIF Bill of materials (BOM) for Spring projects</name>
+  <description>The project to provide dependency management for Spring projects</description>
+  <url>https://github.org/gbif/gbif-spring-bom</url>
 
   <scm>
-    <connection>scm:git:git@github.com:gbif/gbif-bom.git</connection>
-    <url>https://github.com/gbif/gbif-bom</url>
-    <developerConnection>scm:git:git@github.com:gbif/gbif-bom.git</developerConnection>
+    <connection>scm:git:git@github.com:gbif/gbif-spring-bom.git</connection>
+    <url>https://github.com/gbif/gbif-spring-bom</url>
+    <developerConnection>scm:git:git@github.com:gbif/gbif-spring-bom.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
-      <url>https://raw.githubusercontent.com/gbif/gbif-bom/master/LICENSE</url>
+      <url>https://raw.githubusercontent.com/gbif/gbif-spring-bom/master/LICENSE</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -35,7 +35,7 @@
   <distributionManagement>
     <site>
       <id>gh-pages</id>
-      <url>http://gbif.github.io/gbif-bom/</url>
+      <url>http://gbif.github.io/gbif-spring-bom/</url>
     </site>
     <repository>
       <id>gbif-release</id>
@@ -121,7 +121,35 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+
     </dependencies>
   </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+          <configuration>
+            <argLine>${surefireArgLine}</argLine>
+            <excludes>
+              <exclude>**/*IT.java</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 
 </project>
